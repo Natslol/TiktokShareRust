@@ -7,7 +7,6 @@ fn main() {
     io::stdin().read_line(&mut id).expect("Impossible de lire la ligne");
     id.pop();
     if id.contains("\r") { id.pop(); }
-    println!("{:?}", id);
     share(id.trim())
 }
 
