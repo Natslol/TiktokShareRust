@@ -26,8 +26,8 @@ fn share(id: String) {
         });
     }
     let now = Instant::now();
+    thread::sleep(Duration::from_secs(1));
     loop {
-        thread::sleep(Duration::from_secs(1));
         let time = now.elapsed().as_secs() as usize;
         winconsole::console::set_title(format!("Vitesse: {}/s, Temps: {}s", (count.load(Ordering::Relaxed) / time), time).trim()).unwrap();
     }
