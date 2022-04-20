@@ -5,7 +5,7 @@ use std::time::{Instant, Duration};
 use std::sync::Arc;
 
 fn main() {
-    println!("Shares link -> ");
+    println!("Shares id (met l'id de la video pas le lien pour l'instant) -> ");
     let mut id = String::new();
     io::stdin().read_line(&mut id).expect("Impossible de lire la ligne");
     id.pop();
@@ -13,7 +13,7 @@ fn main() {
     share(id);
 }
 fn share(id: String) {
-    const LIMIT_THREAD: i32 = 100;
+    const LIMIT_THREAD: i32 = 500;
     let count = Arc::new(AtomicUsize::new(0));
     for _ in 0..LIMIT_THREAD {
         let clone = id.clone();
