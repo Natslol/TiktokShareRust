@@ -1,8 +1,7 @@
 use std::io;
-use std::thread;
 
 fn main() {
-    println!("Shares link -> ");
+    println!("Shares id -> ");
     let mut id = String::new();
     io::stdin().read_line(&mut id).expect("Impossible de lire la ligne");
     id.pop();
