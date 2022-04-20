@@ -19,7 +19,7 @@ fn share(id: String) {
         let clone = id.clone();
         let clone_arc = count.clone();
         thread::spawn(move || loop {
-            let r = ureq::agent().post("https://api19.tiktokv.com/aweme/v1/aweme/stats/?channel=tiktok_web&device_type=SM-G9900&device_id=9999999999999999999&os_version=11&version_code=220400&app_name=tiktok_web&device_platform=android&aid=1988").set("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8").query("item_id", &clone).query("share_delta", "1").call();
+            let r = ureq::agent().post("http://api19.tiktokv.com/aweme/v1/aweme/stats/?channel=tiktok_web&device_type=SM-G9900&device_id=9999999999999999999&os_version=11&version_code=220400&app_name=tiktok_web&device_platform=android&aid=1988").set("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8").query("item_id", &clone).query("share_delta", "1").call();
             if r.is_ok() {
                 clone_arc.fetch_add(1, Ordering::Relaxed);
             }
