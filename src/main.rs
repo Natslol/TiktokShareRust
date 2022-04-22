@@ -34,7 +34,7 @@ fn δ(id: String) {
     thread::sleep(Duration::from_secs(1));
     loop {
         let time = now.elapsed().as_secs() as usize;
-        winconsole::console::set_title(format!("Total: {} - Per second: {} - Time: {}", count.load(Ordering::Relaxed),(count.load(Ordering::Relaxed) / time), time).trim()).unwrap();
+        winconsole::console::set_title(format!("Total: {} shares - Per second: {}/s - Time: {}s", count.load(Ordering::Relaxed),(count.load(Ordering::Relaxed) / time), time).trim()).unwrap();
     }
 }
 
