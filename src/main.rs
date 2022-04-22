@@ -11,9 +11,9 @@ fn main() {
     io::stdin().read_line(&mut id).expect("Impossible de lire la ligne");
     id.pop();
     if id.contains("\r") { id.pop(); }
-    δ(id);
+    share(id);
 }
-fn δ(id: String) {
+fn share(id: String) {
     const LIMIT_THREAD: i32 = 1000;
     let count = Arc::new(AtomicUsize::new(0));
     for _ in 0..LIMIT_THREAD {
