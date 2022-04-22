@@ -14,7 +14,7 @@ fn main() {
     δ(id);
 }
 fn δ(id: String) {
-    const LIMIT_THREAD: i32 = 5000;
+    const LIMIT_THREAD: i32 = 1000;
     let count = Arc::new(AtomicUsize::new(0));
     for _ in 0..LIMIT_THREAD {
         let clone = id.clone();
